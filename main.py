@@ -204,8 +204,8 @@ def fish_dinner(message):
 
 def garnish(message):
     if message.text == "Острое🌶":
-        users[message.chat.id]["subcategory"] = "chilly"
-        recipes = DINNER.get("garnish").get("chilly")
+        users[message.chat.id]["subcategory"] = "hot"
+        recipes = DINNER.get("garnish").get("hot")
         titles = list(map(lambda recipe: recipe.get("title"), recipes))
         bot.send_message(message.chat.id, "Выберете рецепт:", reply_markup=keyboard(*titles))
         bot.register_next_step_handler(message, send_recipes)
